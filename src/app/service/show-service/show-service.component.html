@@ -1,0 +1,13 @@
+<br />
+<div class="row justify-content-md-center">
+    <div class="col-4">
+        <a class="btn btn-warning btn-lg btn-block mt-2 mb-3" [routerLink]="[ '/service/add/new' ]">Add New Service</a>
+        <div class="nav bg-primary justify-content-center mb-3">
+            <h3 style="color: white;">-------- Existing Services --------</h3>
+        </div>
+        <ng-container *ngFor="let service of services">
+            <a class="btn btn-outline-primary btn-lg btn-block" [routerLink]="['/service', service.id]">Service:
+                {{service.sdesc}}, Room: {{service.roomId}}</a><br />
+        </ng-container>
+    </div>
+</div>

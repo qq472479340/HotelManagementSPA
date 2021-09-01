@@ -1,0 +1,21 @@
+<div class="row justify-content-md-center">
+    <div class="card col-4" style="width: 30rem;">
+        <div class="card-body">
+            <h3 class="card-title">Room Number: {{roomDetails.id}}</h3>
+            <ul class="list-group">
+                <li class="list-group-item">Room Type: {{roomDetails.roomType.rtdesc}}</li>
+                <li class="list-group-item" *ngIf="roomDetails.status">Status: Available</li>
+                <li class="list-group-item" *ngIf="!roomDetails.status">Status: Unavailable</li>
+                <li class="list-group-item">Rent: {{roomDetails.roomType.rent}}</li>
+            </ul>
+            <div class="row justify-content-md-center">
+                <div class="col-6">
+                    <a class="btn btn-primary ml-5 mt-5" [routerLink]="['/room/update', roomDetails.id]">Update</a>
+                </div>
+                <div class="col-6">
+                    <a class="btn btn-danger ml-5 mt-5" (click)="deleteRoom()">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

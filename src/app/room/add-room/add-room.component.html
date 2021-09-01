@@ -1,0 +1,14 @@
+<div class="row justify-content-center">
+    <div class="col-4">
+        <form (ngSubmit)="addRoom()" #addForm="ngForm">
+            <div class="form-group">
+                <label for="roomTypeId">Room Type</label>
+                <select id="roomTypeId" class="form-control" name="roomTypeId" [(ngModel)]="room.roomTypeId">
+                    <option selected>------Select Room Type-----</option>
+                    <option *ngFor="let roomType of roomTypes" [value]="roomType.id">{{roomType.rtdesc}}</option>
+                </select>
+            </div>
+            <input type="submit" class="btn btn-primary btn-block" value="Add">
+        </form>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<br />
+<div class="row justify-content-md-center">
+    <div class="col-4">
+        <a class="btn btn-warning btn-lg btn-block mt-2 mb-3" [routerLink]="[ '/room/add/new' ]">Add New Room</a>
+        <div class="nav bg-primary justify-content-center mb-3">
+            <h3 style="color: white;">-------- Existing Rooms --------</h3>
+        </div>
+        <div class="row mb-3">
+            <div class="col-6">
+                <h3 class="ml-4"><span class="badge badge-primary">Available Rooms</span></h3>
+            </div>
+            <div class="col-6 ">
+                <h3 class="ml-2"><span class="badge badge-danger">Unavailable Rooms</span></h3>
+            </div>
+        </div>
+        <ng-container *ngFor="let room of rooms">
+            <a class="btn btn-outline-primary btn-lg btn-block" [routerLink]="['/room', room.id]"
+                *ngIf="room.status">Room Number:
+                {{room.id}}</a>
+            <a class="btn btn-outline-danger btn-lg btn-block" [routerLink]="['/room', room.id]"
+                *ngIf="!room.status">Room Number:
+                {{room.id}}</a><br />
+        </ng-container>
+    </div>
+</div>
